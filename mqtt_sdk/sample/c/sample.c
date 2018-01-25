@@ -417,7 +417,7 @@ static int MqttSample_CmdPing(struct MqttSampleContext *ctx)
 
 
 static int MqttSample_CmdPublishFullJson(struct MqttSampleContext *ctx,int  qos){
-    const char *str = "{\"datastreams\":[{ \"id\":\"temperature\", \"datapoints\":[{\"at\":\"2016-12-22 22:22:22\",\"value\": 36.5}]}]}";
+    const char *str = "{\"datastreams\":[{ \"id\":\"temperature\", \"datapoints\":[{\"at\":\"2018-01-24 15:57:22\",\"value\": 36.5}]}]}";
     uint32_t size = strlen(str);
     int retain = 0;
     int own = 1;
@@ -452,7 +452,8 @@ static int MqttSample_CmdPublishBin(struct MqttSampleContext *ctx, int qos){
 }
 
 static int MqttSample_CmdPublishSimpleJsonWithoutTime(struct MqttSampleContext *ctx, int qos){
-    const char *str = "{\"temperature\":22.5}";
+    //const char *str = "{\"temperature\":22.5}";
+    const char *str = "{\"temperature\":22.5, \"new_ds\":{\"a\":\"b\"}}";
     uint32_t size = strlen(str);
     int retain = 0;
     int own = 1;
